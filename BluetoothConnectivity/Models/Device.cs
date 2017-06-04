@@ -15,7 +15,7 @@ namespace BluetoothConnectivity.Models
         /// <value>
         /// The device name.
         /// </value>
-        public string DeviceName { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether authenticated.
@@ -94,7 +94,7 @@ namespace BluetoothConnectivity.Models
                 DeviceInfo = device_info;
                 IsAuthenticated = device_info.Authenticated;
                 IsConnected = device_info.Connected;
-                DeviceName = device_info.DeviceName;
+                Name = device_info.DeviceName;
                 LastSeen = device_info.LastSeen;
                 LastUsed = device_info.LastUsed;
                 Nap = device_info.DeviceAddress.Nap;
@@ -111,7 +111,7 @@ namespace BluetoothConnectivity.Models
         /// </returns>
         public override string ToString()
         {
-            return DeviceName;
+            return Name;
         }
     }
 }
