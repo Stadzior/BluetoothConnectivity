@@ -15,10 +15,9 @@ namespace BluetoothConnectivity.Services
         private NetworkStream _bluetoothStream;
         private BluetoothClient _bluetoothClient;
 
-        public bool Connect(Device device, Guid serviceId = default(Guid))
+        public bool Connect(Device device, Guid serviceId)
         {
             _bluetoothClient = _bluetoothClient ?? new BluetoothClient();
-            serviceId = serviceId.Equals(default(Guid)) ? BluetoothService.SerialPort : serviceId;
             var endPoint = new BluetoothEndPoint(device.DeviceInfo.DeviceAddress, serviceId);
 
             if (!_bluetoothClient.Connected)
